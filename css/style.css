@@ -12,11 +12,12 @@
 }
 
 :root {
-    --bg-color: #e9edf4;        /* soft light steel blue background */
-    --second-bg-color: #f9fbfd; /* very light section contrast */
-    --text-color: #1a1f36;      /* dark navy-gray text for visibility */
-    --main-color: #264de4;      /* refined navy blue accent (slightly bright) */
+    --bg-color: #dce3f0;        /* soft navy blue background */
+    --second-bg-color: #f7f9fc; /* near-white for cards and sections */
+    --text-color: #1a1a1a;      /* dark text for readability */
+    --main-color: #264de4;      /* classic navy accent */
 }
+
 
 /* === FORCE LIGHT MODE FIX === */
 body,
