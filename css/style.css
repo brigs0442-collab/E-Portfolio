@@ -528,3 +528,23 @@ span {
         width: 90vw;
     }
 } 
+/* ===== FINAL BACKGROUND FIX ===== */
+
+body, html, section, .home, .about, .services, .portfolio, .contact, .footer {
+    background-color: #dce3f0 !important;  /* light soft navy-blue tone */
+    color: #1a1a1a !important;             /* dark readable text */
+}
+
+.header {
+    background-color: #f7f9fc !important;  /* lighter header for contrast */
+}
+
+h1, h2, h3, h4, h5, h6, p, a, span, li, label {
+    color: #1a1a1a !important; /* make all text visible */
+}
+
+.btn, .social-media a, .footer-iconTop a {
+    background-color: #264de4 !important;  /* professional navy accent */
+    color: #ffffff !important;
+    border-color: #264de4 !important;
+}
