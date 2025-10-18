@@ -42,6 +42,47 @@ body {
     background: linear-gradient(180deg, #e9edf4 0%, #f3f6fa 100%);
     color: var(--text-color);
 }
+body {
+    background: linear-gradient(180deg, var(--bg-color) 0%, var(--second-bg-color) 100%);
+    color: var(--text-color);
+}
+
+/* Sections */
+section {
+    background: var(--second-bg-color);
+    color: var(--text-color);
+}
+
+/* Header */
+.header {
+    background-color: var(--bg-color);
+}
+
+/* Buttons */
+.btn {
+    background: var(--main-color);
+    color: #fff;
+    transition: 0.3s ease;
+}
+.btn:hover {
+    background: var(--highlight-color);
+    box-shadow: 0 0 1rem var(--highlight-color);
+}
+
+/* Links */
+.navbar a {
+    color: var(--text-color);
+}
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color);
+}
+
+/* Footer */
+.footer {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
 
 
 section {
