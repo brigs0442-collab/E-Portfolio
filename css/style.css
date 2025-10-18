@@ -12,22 +12,12 @@
 }
 
 :root {
-    --bg-color: #0f172a;        /* rich navy charcoal – dark but elegant */
-    --second-bg-color: #1e293b; /* medium-dark contrast for sections */
-    --text-color: #f1f5f9;      /* soft white text – easy to read */
-    --main-color: #38bdf8;      /* refined blue accent (not neon) */
-    --highlight-color: #7dd3fc; /* lighter blue for hover or icons */
+    --bg-color: #060b10;        /* Deep navy-black background */
+    --second-bg-color: #0d1622; /* Slightly lighter section background */
+    --text-color: #e5eaf0;      /* Soft off-white text for readability */
+    --main-color: #3b82f6;      /* Professional blue accent */
+    --highlight-color: #60a5fa; /* Lighter blue for hover/glow */
 }
-
-
-
-
-
-
-
-
-
-
 
 html {
     font-size: 62.5%;
@@ -35,71 +25,17 @@ html {
 }
 
 body {
-    background: linear-gradient(180deg, var(--bg-color) 0%, var(--second-bg-color) 100%);
+    background: linear-gradient(180deg, #060b10 0%, #0d1622 100%);
     color: var(--text-color);
 }
 
-
-/* Sections */
-section {
-    background: var(--second-bg-color);
-    color: var(--text-color);
-}
-
-/* Header */
-.header {
-    background-color: var(--bg-color);
-}
-
-/* Buttons */
-.btn {
-    background: var(--main-color);
-    color: #fff;
-    transition: 0.3s ease;
-}
-.btn:hover {
-    background: var(--highlight-color);
-    box-shadow: 0 0 1rem var(--highlight-color);
-}
-.btn {
-    background: var(--main-color);
-    color: var(--bg-color);
-    transition: 0.3s ease;
-}
-.btn:hover {
-    background: var(--highlight-color);
-    box-shadow: 0 0 1rem var(--highlight-color);
-}
-
-.navbar a {
-    color: var(--text-color);
-}
-.navbar a:hover,
-.navbar a.active {
-    color: var(--main-color);
-}
-
-/* Links */
-.navbar a {
-    color: var(--text-color);
-}
-.navbar a:hover,
-.navbar a.active {
-    color: var(--main-color);
-}
-
-/* Footer */
-.footer {
-    background: var(--bg-color);
-    color: var(--text-color);
-}
-
-
+/* --- Layout --- */
 section {
     min-height: 100vh;
     padding: 10rem 9% 2rem;
 }
 
+/* --- Header --- */
 .header {
     position: fixed;
     top: 0;
@@ -114,7 +50,7 @@ section {
 }
 
 .header.sticky {
-    border-bottom: .1rem solid rgba(0, 0, 0, .2);
+    border-bottom: .1rem solid rgba(255, 255, 255, .1);
 }
 
 .logo {
@@ -124,6 +60,7 @@ section {
     cursor: default;
 }
 
+/* --- Navbar --- */
 .navbar a {
     font-size: 1.7rem;
     color: var(--text-color);
@@ -136,12 +73,13 @@ section {
     color: var(--main-color);
 }
 
-#menu-icon { 
+#menu-icon {
     font-size: 3.6rem;
     color: var(--text-color);
     display: none;
 }
 
+/* --- Home Section --- */
 .home {
     display: flex;
     justify-content: center;
@@ -154,15 +92,9 @@ section {
 }
 
 @keyframes floatImage {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-2.4rem);
-    }
-    100% {
-        transform: translateY(0);
-    }
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-2.4rem); }
+    100% { transform: translateY(0); }
 }
 
 .home-content h3 {
@@ -188,6 +120,7 @@ span {
     font-size: 1.6rem;
 }
 
+/* --- Social Media Links --- */
 .social-media a {
     display: inline-flex;
     justify-content: center;
@@ -205,10 +138,11 @@ span {
 
 .social-media a:hover {
     background: var(--main-color);
-    color: var(--second-bg-color);
-    box-shadow: 0 0 1rem var(--main-color);
+    color: var(--bg-color);
+    box-shadow: 0 0 1rem var(--highlight-color);
 }
 
+/* --- Button --- */
 .btn {
     display: inline-block;
     padding: 1rem 2.8rem;
@@ -216,16 +150,18 @@ span {
     border-radius: 4rem;
     box-shadow: 0 0 1rem var(--main-color);
     font-size: 1.6rem;
-    color: var(--second-bg-color);
+    color: #fff;
     letter-spacing: .1rem;
     font-weight: 600;
     transition: .5s ease;
 }
 
 .btn:hover {
-    box-shadow: none;
+    background: var(--highlight-color);
+    box-shadow: 0 0 2rem var(--highlight-color);
 }
 
+/* --- About Section --- */
 .about {
     display: flex;
     justify-content: center;
@@ -243,7 +179,7 @@ span {
     font-size: 4.5rem;
 }
 
-.about-content h2{
+.about-content h2 {
     text-align: left;
     line-height: 1.2;
 }
@@ -257,6 +193,7 @@ span {
     margin: 2rem 0 3rem;
 }
 
+/* --- Services --- */
 .services h2 {
     margin-bottom: 5rem;
 }
@@ -298,6 +235,7 @@ span {
     margin: 1rem 0 3rem;
 }
 
+/* --- Portfolio --- */
 .portfolio {
     background: var(--second-bg-color);
 }
@@ -308,7 +246,7 @@ span {
 
 .portfolio-container {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     align-items: center;
     gap: 2.5rem;
 }
@@ -328,7 +266,7 @@ span {
 
 .portfolio-box:hover img {
     transform: scale(1.1);
-} 
+}
 
 .portfolio-box .portfolio-layer {
     position: absolute;
@@ -336,7 +274,7 @@ span {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, .1), var(--main-color));
+    background: linear-gradient(rgba(0, 0, 0, .3), var(--main-color));
     display: flex;
     justify-content: center;
     align-items: center;
@@ -353,11 +291,13 @@ span {
 
 .portfolio-layer h4 {
     font-size: 3rem;
+    color: #fff;
 }
 
 .portfolio-layer p {
     font-size: 1.6rem;
     margin: .3rem 0 1rem;
+    color: #fff;
 }
 
 .portfolio-layer a {
@@ -372,10 +312,10 @@ span {
 
 .portfolio-layer a i {
     font-size: 2rem;
-    color: var(--second-bg-color);
-
+    color: var(--bg-color);
 }
 
+/* --- Contact --- */
 .contact h2 {
     margin-bottom: 3rem;
 }
@@ -387,7 +327,7 @@ span {
     margin-bottom: 3rem;
 }
 
-.contact form .input-box{
+.contact form .input-box {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -417,7 +357,8 @@ span {
     cursor: pointer;
 }
 
-.footer{
+/* --- Footer --- */
+.footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -441,7 +382,7 @@ span {
 }
 
 .footer-iconTop a:hover {
-    box-shadow: 0 0 1rem var(--main-color);
+    box-shadow: 0 0 1rem var(--highlight-color);
 }
 
 .footer-iconTop a i {
@@ -449,43 +390,21 @@ span {
     color: var(--second-bg-color);
 }
 
-/* BREAKPOINTS */
+/* --- Breakpoints --- */
 @media (max-width: 1200px) {
-    html {
-        font-size: 55%;
-    }
+    html { font-size: 55%; }
 }
 
 @media (max-width: 991px) {
-    .header {
-        padding: 2rem 3%;
-    }
-
-    section {
-        padding: 10rem 3% 2rem;
-    }
-
-    .services {
-        padding-bottom: 7rem;
-    }
-
-    .portfolio {
-        padding-bottom: 7rem;
-    }
-
-    .contact {
-        min-height: auto;
-    }
-
-    .footer {
-        padding: 2rem 3%;
-    }
+    .header { padding: 2rem 3%; }
+    section { padding: 10rem 3% 2rem; }
+    .services, .portfolio { padding-bottom: 7rem; }
+    .contact { min-height: auto; }
+    .footer { padding: 2rem 3%; }
 }
 
 @media (max-width: 768px) {
-    #menu-icon {
-        display: block;
-    }
+    #menu-icon { display: block; }
 
     .navbar {
         position: absolute;
@@ -494,14 +413,12 @@ span {
         width: 100%;
         padding: 1rem 3%;
         background: var(--bg-color);
-        border-top: .1rem solid rgba(0, 0, 0, .2);
-        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+        border-top: .1rem solid rgba(255, 255, 255, .1);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .3);
         display: none;
     }
 
-    .navbar.active {
-        display: block;
-    }
+    .navbar.active { display: block; }
 
     .navbar a {
         display: block;
@@ -509,77 +426,30 @@ span {
         margin: 3rem 0;
     }
 
-    .home {
-        flex-direction: column;
-    }
+    .home { flex-direction: column; }
+    .home-content h3 { font-size: 2.6rem; }
+    .home-content h1 { font-size: 5rem; }
+    .home-img img { width: 70vw; margin-top: 4rem; }
 
-    .home-content h3 {
-        font-size: 2.6rem;
-    }
+    .about { flex-direction: column-reverse; }
+    .about img { width: 70vw; margin-top: 4rem; }
 
-    .home-content h1 {
-        font-size: 5rem;
-    }
-
-    .home-img img {
-        width: 70vw;
-        margin-top: 4rem;
-    }
-
-    .about {
-        flex-direction: column-reverse;
-    }
-
-    .about img {
-        width: 70vw;
-        margin-top: 4rem;
-    }
-
-    .services h2 {
-        margin-bottom: 3rem;
-    }
-
-    .portfolio h2 {
-        margin-bottom: 3rem;
-    }
-
-    .portfolio-container {
-        grid-template-columns: repeat(2 , 1fr);
-    }
+    .services h2, .portfolio h2 { margin-bottom: 3rem; }
+    .portfolio-container { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 617px) {
-    .portfolio-container {
-        grid-template-columns: 1fr;
-    }
+    .portfolio-container { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 450px) {
-    html {
-        font-size: 50%;
-    }
-
-    .contact form .input-box input {
-        width: 100%;
-    }
-
-    .footer {
-        flex-direction: column-reverse;
-    }
-
-    .footer p {
-        text-align: center;
-        margin-top: 2rem;
-    }
+    html { font-size: 50%; }
+    .contact form .input-box input { width: 100%; }
+    .footer { flex-direction: column-reverse; }
+    .footer p { text-align: center; margin-top: 2rem; }
 }
 
 @media (max-width: 350px) {
-    .home-img img {
-        width: 90vw;
-    }
-
-    .about-img img {
-        width: 90vw;
-    }
-} 
+    .home-img img, .about-img img { width: 90vw; }
+}
 
