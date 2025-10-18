@@ -12,10 +12,10 @@
 }
 
 :root {
-    --bg-color: #f8f9fb;        /* clean light background */
-    --second-bg-color: #ffffff; /* pure white for sections and cards */
-    --text-color: #1e1e1e;      /* rich dark grey for perfect readability */
-    --main-color: #1c7ed6;      /* refined blue accent for buttons and highlights */
+    --bg-color: #f8f9fb;       
+    --second-bg-color: #ffffff; 
+    --text-color: #1e1e1e;      
+    --main-color: #1c7ed6;     
 }
 
 
