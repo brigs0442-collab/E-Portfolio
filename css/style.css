@@ -11,14 +11,14 @@
     font-family: 'Poppins', sans-serif;
 }
 
-/* === Modern Professional Theme === */
+/* === Balanced Navy + White Theme === */
 :root {
-    --bg-color: #14213d;        /* deep navy – confidence & trust */
-    --second-bg-color: #f8fafc; /* clean white-blue for light sections */
-    --text-color: #f1f5f9;      /* soft white text on dark sections */
-    --dark-text-color: #1e293b; /* charcoal for light sections */
-    --main-color: #2563eb;      /* strong professional blue accent */
-    --highlight-color: #60a5fa; /* lighter blue for hover or glow */
+    --bg-color: #1b2a49;        /* deep but readable navy blue */
+    --second-bg-color: #f4f7fb; /* soft white-blue contrast sections */
+    --text-color: #f8fafc;      /* off-white for dark backgrounds */
+    --dark-text-color: #1e293b; /* dark text for light sections */
+    --main-color: #2b6cb0;      /* professional medium blue accent */
+    --highlight-color: #5fa8f5; /* lighter accent for hover and highlights */
 }
 
 /* === Global Layout === */
@@ -28,7 +28,7 @@ html {
 }
 
 body {
-    background: linear-gradient(180deg, #14213d 0%, #1a2547 100%);
+    background: linear-gradient(180deg, #1b2a49 0%, #23355a 100%);
     color: var(--text-color);
 }
 
@@ -37,7 +37,7 @@ section {
     padding: 10rem 9% 2rem;
 }
 
-/* === Alternating Sections === */
+/* === Alternating Section Design === */
 .home, .portfolio {
     background: var(--bg-color);
     color: var(--text-color);
@@ -60,7 +60,7 @@ section {
     justify-content: space-between;
     align-items: center;
     z-index: 100;
-    transition: .3s ease;
+    transition: 0.3s ease;
 }
 
 .header.sticky {
@@ -71,7 +71,6 @@ section {
     font-size: 2.5rem;
     color: var(--text-color);
     font-weight: 600;
-    letter-spacing: 0.5px;
 }
 
 /* === Navbar === */
@@ -79,7 +78,7 @@ section {
     font-size: 1.7rem;
     color: var(--text-color);
     margin-left: 4rem;
-    transition: .3s;
+    transition: 0.3s;
 }
 
 .navbar a:hover,
@@ -107,26 +106,24 @@ section {
 .home-content h3 {
     font-size: 3.2rem;
     font-weight: 600;
+    margin-bottom: 1rem;
 }
 
-.home-content h3:nth-of-type(2) {
+.home-content h1 {
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 1.5rem;
+}
+
+.home-content p {
+    font-size: 1.6rem;
+    color: var(--text-color);
     margin-bottom: 2rem;
 }
 
 span {
     color: var(--highlight-color);
-}
-
-.home-content h1 {
-    font-size: 5.2rem;
-    font-weight: 700;
-    line-height: 1.3;
-}
-
-.home-content p {
-    font-size: 1.6rem;
-    margin-top: 1rem;
-    color: var(--text-color);
 }
 
 /* === Social Icons === */
@@ -136,32 +133,31 @@ span {
     align-items: center;
     width: 4rem;
     height: 4rem;
-    border: .2rem solid var(--main-color);
+    border: 0.2rem solid var(--highlight-color);
     border-radius: 50%;
     font-size: 2rem;
-    color: var(--main-color);
+    color: var(--highlight-color);
     margin: 3rem 1.5rem 3rem 0;
-    transition: .5s ease;
+    transition: 0.5s ease;
 }
 
 .social-media a:hover {
-    background: var(--main-color);
-    color: #fff;
+    background: var(--highlight-color);
+    color: var(--bg-color);
     box-shadow: 0 0 1rem var(--highlight-color);
 }
 
-/* === Button === */
+/* === Buttons === */
 .btn {
     display: inline-block;
     padding: 1rem 2.8rem;
     background: var(--main-color);
     border-radius: 4rem;
-    box-shadow: 0 0 1rem var(--main-color);
     font-size: 1.6rem;
     color: #fff;
-    letter-spacing: .1rem;
     font-weight: 600;
-    transition: .3s ease;
+    box-shadow: 0 0 1rem var(--main-color);
+    transition: 0.3s ease;
 }
 
 .btn:hover {
@@ -184,10 +180,15 @@ span {
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
 }
 
+.heading {
+    text-align: center;
+    font-size: 4.5rem;
+}
+
 .about-content h2 {
-    font-size: 4rem;
-    margin-bottom: 1.5rem;
+    font-size: 3.8rem;
     color: var(--dark-text-color);
+    margin-bottom: 1rem;
 }
 
 .about-content h3 {
@@ -198,15 +199,15 @@ span {
 
 .about-content p {
     font-size: 1.6rem;
-    color: var(--dark-text-color);
     line-height: 1.6;
+    color: var(--dark-text-color);
 }
 
-/* === Services === */
+/* === Services Section === */
 .services h2 {
     text-align: center;
-    margin-bottom: 4rem;
     color: var(--dark-text-color);
+    margin-bottom: 4rem;
 }
 
 .services-container {
@@ -217,17 +218,17 @@ span {
     gap: 2rem;
 }
 
-.services-container .services-box {
+.services-box {
     flex: 1 1 30rem;
     background: #fff;
-    border: 1px solid #e5e7eb;
+    border: 1px solid #dbe2ef;
     border-radius: 2rem;
     padding: 3rem 2rem;
     text-align: center;
-    transition: .4s ease;
+    transition: 0.4s ease;
 }
 
-.services-container .services-box:hover {
+.services-box:hover {
     border-color: var(--main-color);
     transform: scale(1.03);
     box-shadow: 0 0 1rem rgba(37, 99, 235, 0.3);
@@ -236,11 +237,12 @@ span {
 .services-box i {
     font-size: 5rem;
     color: var(--main-color);
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .services-box h3 {
     font-size: 2.2rem;
+    color: var(--dark-text-color);
     margin-bottom: 1rem;
 }
 
@@ -256,6 +258,7 @@ span {
 
 .portfolio h2 {
     text-align: center;
+    color: var(--text-color);
     margin-bottom: 4rem;
 }
 
@@ -269,12 +272,12 @@ span {
     position: relative;
     border-radius: 2rem;
     overflow: hidden;
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
 }
 
 .portfolio-box img {
     width: 100%;
-    transition: .5s ease;
+    transition: 0.5s ease;
 }
 
 .portfolio-box:hover img {
@@ -290,8 +293,7 @@ span {
     justify-content: center;
     align-items: center;
     transform: translateY(100%);
-    transition: .5s ease;
-    text-align: center;
+    transition: 0.5s ease;
 }
 
 .portfolio-box:hover .portfolio-layer {
@@ -306,28 +308,29 @@ span {
 .portfolio-layer p {
     font-size: 1.5rem;
     color: #f1f5f9;
-    margin: .5rem 0 1rem;
 }
 
-/* === Contact === */
+/* === Contact Section === */
 .contact form {
     max-width: 70rem;
     margin: 0 auto;
     text-align: center;
 }
 
-.contact input, .contact textarea {
+.contact input,
+.contact textarea {
     width: 100%;
     padding: 1.5rem;
     font-size: 1.6rem;
-    border-radius: .8rem;
+    border-radius: 0.8rem;
     background: #fff;
     color: var(--dark-text-color);
     border: 1px solid #cbd5e1;
     margin-bottom: 1rem;
 }
 
-.contact input:focus, .contact textarea:focus {
+.contact input:focus,
+.contact textarea:focus {
     border-color: var(--main-color);
 }
 
@@ -350,10 +353,10 @@ span {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    padding: .8rem;
+    padding: 0.8rem;
     background: var(--main-color);
-    border-radius: .8rem;
-    transition: .3s;
+    border-radius: 0.8rem;
+    transition: 0.3s;
 }
 
 .footer-iconTop a:hover {
