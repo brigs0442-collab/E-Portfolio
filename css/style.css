@@ -12,11 +12,12 @@
 }
 
 :root {
-    --bg-color: #cfd8ec;        /* soft royal navy background */
-    --second-bg-color: #ffffff; /* white cards and sections */
-    --text-color: #1c1f2b;      /* dark bluish text */
-    --main-color: #003366;      /* deep refined navy accent */
+    --bg-color: #0b1e33;
+    --second-bg-color: #f4f7fb;
+    --text-color: #1e293b;
+    --main-color: #0077b6;
 }
+
 
 
 /* === FORCE LIGHT MODE FIX === */
