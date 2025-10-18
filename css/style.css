@@ -12,13 +12,14 @@
 }
 
 :root {
-    --bg-color: #060b10;        /* Deep navy-black background */
-    --second-bg-color: #0d1622; /* Slightly lighter section background */
-    --text-color: #e5eaf0;      /* Soft off-white text for readability */
+    --bg-color: #060b10;        /* Deep navy-black */
+    --second-bg-color: #0d1622; /* Slightly lighter navy */
+    --text-color: #e5eaf0;      /* Soft off-white text */
     --main-color: #3b82f6;      /* Professional blue accent */
     --highlight-color: #60a5fa; /* Lighter blue for hover/glow */
 }
 
+/* Base */
 html {
     font-size: 62.5%;
     overflow-x: hidden;
@@ -29,13 +30,30 @@ body {
     color: var(--text-color);
 }
 
-/* --- Layout --- */
+/* Section layout */
 section {
     min-height: 100vh;
     padding: 10rem 9% 2rem;
 }
 
-/* --- Header --- */
+/* ===== ALTERNATE LIGHT SECTIONS ===== */
+.home, .portfolio {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+.about, .services, .contact, .footer {
+    background: #f8fafc; /* light blue-white background */
+    color: #0f172a;      /* dark navy text */
+}
+
+.about h2, .about h3, .about p,
+.services h2, .services p,
+.contact h2, .contact p {
+    color: #0f172a;
+}
+
+/* Header */
 .header {
     position: fixed;
     top: 0;
@@ -60,7 +78,7 @@ section {
     cursor: default;
 }
 
-/* --- Navbar --- */
+/* Navbar */
 .navbar a {
     font-size: 1.7rem;
     color: var(--text-color);
@@ -79,7 +97,7 @@ section {
     display: none;
 }
 
-/* --- Home Section --- */
+/* Home */
 .home {
     display: flex;
     justify-content: center;
@@ -120,7 +138,7 @@ span {
     font-size: 1.6rem;
 }
 
-/* --- Social Media Links --- */
+/* Social Links */
 .social-media a {
     display: inline-flex;
     justify-content: center;
@@ -142,7 +160,7 @@ span {
     box-shadow: 0 0 1rem var(--highlight-color);
 }
 
-/* --- Button --- */
+/* Buttons */
 .btn {
     display: inline-block;
     padding: 1rem 2.8rem;
@@ -161,13 +179,12 @@ span {
     box-shadow: 0 0 2rem var(--highlight-color);
 }
 
-/* --- About Section --- */
+/* About */
 .about {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    background: var(--second-bg-color);
 }
 
 .about-img img {
@@ -193,7 +210,7 @@ span {
     margin: 2rem 0 3rem;
 }
 
-/* --- Services --- */
+/* Services */
 .services h2 {
     margin-bottom: 5rem;
 }
@@ -208,11 +225,11 @@ span {
 
 .services-container .services-box {
     flex: 1 1 30rem;
-    background: var(--second-bg-color);
+    background: #ffffff;
     padding: 3rem 2rem 4rem;
     border-radius: 2rem;
     text-align: center;
-    border: .2rem solid var(--bg-color);
+    border: .2rem solid #e2e8f0;
     transition: .5s ease;
 }
 
@@ -235,11 +252,7 @@ span {
     margin: 1rem 0 3rem;
 }
 
-/* --- Portfolio --- */
-.portfolio {
-    background: var(--second-bg-color);
-}
-
+/* Portfolio */
 .portfolio h2 {
     margin-bottom: 4rem;
 }
@@ -289,15 +302,17 @@ span {
     transform: translateY(0);
 }
 
+.portfolio-layer h4, .portfolio-layer p {
+    color: #fff;
+}
+
 .portfolio-layer h4 {
     font-size: 3rem;
-    color: #fff;
 }
 
 .portfolio-layer p {
     font-size: 1.6rem;
     margin: .3rem 0 1rem;
-    color: #fff;
 }
 
 .portfolio-layer a {
@@ -315,11 +330,7 @@ span {
     color: var(--bg-color);
 }
 
-/* --- Contact --- */
-.contact h2 {
-    margin-bottom: 3rem;
-}
-
+/* Contact */
 .contact form {
     max-width: 70rem;
     margin: 1rem auto;
@@ -338,10 +349,11 @@ span {
     width: 100%;
     padding: 1.5rem;
     font-size: 1.6rem;
-    color: var(--text-color);
-    background: var(--second-bg-color);
+    color: #0f172a;
+    background: #ffffff;
     border-radius: .8rem;
     margin: .7rem 0;
+    border: .1rem solid #cbd5e1;
 }
 
 .contact form .input-box input {
@@ -357,14 +369,15 @@ span {
     cursor: pointer;
 }
 
-/* --- Footer --- */
+/* Footer */
 .footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     padding: 2rem 9%;
-    background: var(--second-bg-color);
+    background: #f8fafc;
+    color: #0f172a;
 }
 
 .footer-text p {
@@ -387,69 +400,18 @@ span {
 
 .footer-iconTop a i {
     font-size: 2.4rem;
-    color: var(--second-bg-color);
+    color: #ffffff;
 }
 
-/* --- Breakpoints --- */
-@media (max-width: 1200px) {
-    html { font-size: 55%; }
-}
-
+/* Responsive */
+@media (max-width: 1200px) { html { font-size: 55%; } }
 @media (max-width: 991px) {
     .header { padding: 2rem 3%; }
     section { padding: 10rem 3% 2rem; }
-    .services, .portfolio { padding-bottom: 7rem; }
-    .contact { min-height: auto; }
-    .footer { padding: 2rem 3%; }
 }
-
 @media (max-width: 768px) {
     #menu-icon { display: block; }
-
-    .navbar {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        padding: 1rem 3%;
-        background: var(--bg-color);
-        border-top: .1rem solid rgba(255, 255, 255, .1);
-        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .3);
-        display: none;
-    }
-
+    .navbar { display: none; }
     .navbar.active { display: block; }
-
-    .navbar a {
-        display: block;
-        font-size: 2rem;
-        margin: 3rem 0;
-    }
-
-    .home { flex-direction: column; }
-    .home-content h3 { font-size: 2.6rem; }
-    .home-content h1 { font-size: 5rem; }
-    .home-img img { width: 70vw; margin-top: 4rem; }
-
-    .about { flex-direction: column-reverse; }
-    .about img { width: 70vw; margin-top: 4rem; }
-
-    .services h2, .portfolio h2 { margin-bottom: 3rem; }
-    .portfolio-container { grid-template-columns: repeat(2, 1fr); }
 }
-
-@media (max-width: 617px) {
-    .portfolio-container { grid-template-columns: 1fr; }
-}
-
-@media (max-width: 450px) {
-    html { font-size: 50%; }
-    .contact form .input-box input { width: 100%; }
-    .footer { flex-direction: column-reverse; }
-    .footer p { text-align: center; margin-top: 2rem; }
-}
-
-@media (max-width: 350px) {
-    .home-img img, .about-img img { width: 90vw; }
-}
-
+@media (max-width: 450px) { html { font-size: 50%; } }
