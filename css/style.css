@@ -12,10 +12,10 @@
 }
 
 :root {
-    --bg-color: #788055;
-    --second-bg-color: #E9F5BE;
-    --text-color: #81E7AF;
-    --main-color: #03a779;
+    --bg-color: #0b1e33;          /* Deep navy background for elegance and depth */
+    --second-bg-color: #f4f7fb;   /* Clean, soft off-white for sections and readability */
+    --text-color: #1e293b;        /* Dark slate text for a modern, professional feel */
+    --main-color: #0077b6;        /* Strong blue accent for buttons and highlights */
 }
 
 /* :root {
