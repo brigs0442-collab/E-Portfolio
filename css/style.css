@@ -12,11 +12,12 @@
 }
 
 :root {
-    --bg-color: #ffffff;        
-    --second-bg-color: #f4f6f8; 
-    --text-color: #1a1a1a;     
-    --main-color: #0077b6;     
+    --bg-color: #e9edf4;        /* soft light steel blue background */
+    --second-bg-color: #f9fbfd; /* very light section contrast */
+    --text-color: #1a1f36;      /* dark navy-gray text for visibility */
+    --main-color: #264de4;      /* refined navy blue accent (slightly bright) */
 }
+
 /* === FORCE LIGHT MODE FIX === */
 body,
 section,
