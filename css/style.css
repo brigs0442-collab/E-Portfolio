@@ -12,10 +12,10 @@
 }
 
 :root {
-    --bg-color: #ffffff;        /* pure white background */
-    --second-bg-color: #f4f6f8; /* light grey for soft contrast sections */
-    --text-color: #1a1a1a;      /* dark text for visibility */
-    --main-color: #0077b6;      /* professional blue accent */
+    --bg-color: #ffffff;        
+    --second-bg-color: #f4f6f8; 
+    --text-color: #1a1a1a;     
+    --main-color: #0077b6;     
 }
 
 
