@@ -12,10 +12,10 @@
 }
 
 :root {
-    --bg-color: #dce3f0;        /* soft navy blue background */
-    --second-bg-color: #f7f9fc; /* near-white for cards and sections */
-    --text-color: #1a1a1a;      /* dark text for readability */
-    --main-color: #264de4;      /* classic navy accent */
+    --bg-color: #cfd8ec;        /* soft royal navy background */
+    --second-bg-color: #ffffff; /* white cards and sections */
+    --text-color: #1c1f2b;      /* dark bluish text */
+    --main-color: #003366;      /* deep refined navy accent */
 }
 
 
