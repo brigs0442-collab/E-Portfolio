@@ -64,6 +64,10 @@ body {
     background: var(--bg-color);
     color: var(--text-color);
 }
+body {
+    background: linear-gradient(180deg, #e9edf4 0%, #f3f6fa 100%);
+    color: var(--text-color);
+}
 
 
 section {
