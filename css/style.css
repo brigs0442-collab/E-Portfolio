@@ -20,37 +20,6 @@
 
 
 
-/* === FORCE LIGHT MODE FIX === */
-body,
-section,
-.header,
-.home,
-.about,
-.services,
-.portfolio,
-.contact,
-.footer {
-    background-color: #ffffff !important; /* white backgrounds */
-    color: #1a1a1a !important; /* dark readable text */
-}
-
-h1, h2, h3, h4, h5, h6, p, a, span, label, input, textarea {
-    color: #1a1a1a !important; /* force all text visible */
-}
-
-.btn,
-.footer-iconTop a,
-.social-media a {
-    background-color: #0077b6 !important; /* accent blue */
-    color: #ffffff !important;
-    border-color: #0077b6 !important;
-}
-
-.navbar a:hover,
-.navbar a.active,
-span {
-    color: #0077b6 !important; /* blue highlight for active links and spans */
-}
 
 
 
