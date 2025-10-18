@@ -12,13 +12,12 @@
 }
 
 :root {
-    --bg-color: #f5f7fa;        /* overall soft background */
-    --second-bg-color: #ffffff; /* bright white sections */
-    --text-color: #1e293b;      /* deep charcoal for perfect contrast */
-    --main-color: #0077b6;      /* professional blue accent */
-    --highlight-color: #00b4d8; /* soft cyan for hover or highlights */
-    --muted-color: #94a3b8;     /* subtle gray for less important text */
+    --bg-color: #f4f6fa;        /* soft blue-gray background */
+    --second-bg-color: #ffffff; /* white sections */
+    --text-color: #1a1a1a;      /* dark text */
+    --main-color: #0077b6;      /* professional navy blue accent */
 }
+
 
 
 
@@ -35,17 +34,10 @@ html {
 }
 
 body {
-    background: var(--bg-color);
-    color: var(--text-color);
-}
-body {
-    background: linear-gradient(180deg, #e9edf4 0%, #f3f6fa 100%);
-    color: var(--text-color);
-}
-body {
     background: linear-gradient(180deg, var(--bg-color) 0%, var(--second-bg-color) 100%);
     color: var(--text-color);
 }
+
 
 /* Sections */
 section {
