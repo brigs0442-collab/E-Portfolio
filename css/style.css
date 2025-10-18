@@ -12,10 +12,10 @@
 }
 
 :root {
-    --bg-color: #f5f7fa;        /* Light neutral background for a clean, modern look */
-    --second-bg-color: #ffffff; /* Crisp white for contrast in sections */
-    --text-color: #2b2d42;      /* Deep grey-blue for a calm professional text tone */
-    --main-color: #00a896;      /* Refined teal accent – modern, balanced, and positive */
+    --bg-color: #f5f7fa;        
+    --second-bg-color: #ffffff; 
+    --text-color: #2b2d42;      
+    --main-color: #00a896;      
 }
 
 
