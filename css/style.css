@@ -264,7 +264,7 @@ span {
 
 .portfolio-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2.5rem;
 }
 
@@ -272,12 +272,23 @@ span {
     position: relative;
     border-radius: 2rem;
     overflow: hidden;
+    background: var(--bg-color);
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
 }
 
+.portfolio-box:hover {
+    transform: translateY(-5px);
+}
+
+/* Fixed image sizing and alignment */
 .portfolio-box img {
     width: 100%;
-    transition: 0.5s ease;
+    height: 250px; /* consistent height for all */
+    object-fit: cover; /* ensures no blue gap and consistent framing */
+    border-radius: 2rem;
+    display: block;
+    transition: transform 0.5s ease;
 }
 
 .portfolio-box:hover img {
@@ -369,6 +380,17 @@ span {
     font-size: 2rem;
 }
 
+/* === Hyperlinks (No Underline) === */
+a {
+  color: var(--highlight-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--main-color);
+}
+
 /* === Responsive === */
 @media (max-width: 991px) {
     .navbar { display: none; }
@@ -380,13 +402,4 @@ span {
 }
 @media (max-width: 450px) {
     html { font-size: 50%; }
-}
-a {
-  color: var(--highlight-color);
-  text-decoration: underline;
-  transition: color 0.3s ease;
-}
-
-a:hover {
-  color: var(--main-color);
 }
