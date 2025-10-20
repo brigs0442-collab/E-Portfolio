@@ -381,3 +381,12 @@ span {
 @media (max-width: 450px) {
     html { font-size: 50%; }
 }
+a {
+  color: var(--highlight-color);
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--main-color);
+}
