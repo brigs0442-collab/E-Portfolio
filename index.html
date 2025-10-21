@@ -8,20 +8,521 @@
 
   <!-- box icons -->
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-  <!-- custom css -->
-  <link rel="stylesheet" href="./css/style.css">
-
+  
   <style>
-    /* Remove underlines from text hyperlinks and add clean hover styling */
-    a {
-      color: #4da6ff;
-      text-decoration: none;
-      transition: color 0.3s ease;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* === Balanced Navy + White Theme === */
+:root {
+    --bg-color: #1b2a49;        
+    --second-bg-color: #f4f7fb; 
+    --text-color: #f8fafc;      
+    --dark-text-color: #1e293b; 
+    --main-color: #2b6cb0;      
+    --highlight-color: #5fa8f5; 
+}
+
+/* === Global Layout === */
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    background: linear-gradient(180deg, #1b2a49 0%, #23355a 100%);
+    color: var(--text-color);
+}
+
+/* === One Full Page per Section === */
+section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8rem 9%;
+    box-sizing: border-box;
+}
+
+/* Allow internal scrolling if content exceeds one page */
+.capstone, .reflections, .projects, .career, .summary {
+    height: 100vh;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    padding: 8rem 9%;
+}
+
+/* Home section layout */
+.home {
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10rem 9%;
+}
+
+/* === Alternating Section Design === */
+.home, .portfolio {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+.about, .services, .contact, .footer {
+    background: var(--second-bg-color);
+    color: var(--dark-text-color);
+}
+
+/* === Header === */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    transition: 0.3s ease;
+}
+
+.header.sticky {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.logo {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+/* === Navbar === */
+.navbar a {
+    font-size: 1.7rem;
+    color: var(--text-color);
+    margin-left: 4rem;
+    transition: 0.3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--highlight-color);
+}
+
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--text-color);
+    display: none;
+}
+
+/* === Home Section === */
+.home-content {
+    max-width: 600px;
+}
+
+.home-content h3 {
+    font-size: 3.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.home-content h1 {
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 1.5rem;
+}
+
+.home-content p {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+}
+
+span {
+    color: var(--highlight-color);
+}
+
+/* === Social Icons === */
+.social-media a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    border: 0.2rem solid var(--highlight-color);
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--highlight-color);
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.5s ease;
+}
+
+.social-media a:hover {
+    background: var(--highlight-color);
+    color: var(--bg-color);
+    box-shadow: 0 0 1rem var(--highlight-color);
+}
+
+/* === Buttons === */
+.btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 0 0 1rem var(--main-color);
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    background: var(--highlight-color);
+    box-shadow: 0 0 1.5rem var(--highlight-color);
+}
+
+/* === About Section === */
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.about-img img {
+    width: 35vw;
+    min-width: 300px;
+    max-width: 500px;
+    border-radius: 2rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+}
+
+.heading {
+    text-align: center;
+    font-size: 4.5rem;
+}
+
+.about-content {
+    max-width: 600px;
+}
+
+.about-content h2 {
+    font-size: 3.8rem;
+    color: var(--dark-text-color);
+    margin-bottom: 1rem;
+}
+
+.about-content h3 {
+    font-size: 2.4rem;
+    color: var(--main-color);
+    margin-bottom: 1rem;
+}
+
+.about-content p {
+    font-size: 1.6rem;
+    line-height: 1.6;
+    color: var(--dark-text-color);
+}
+
+/* === Services Section === */
+.services h2 {
+    text-align: center;
+    color: var(--dark-text-color);
+    margin-bottom: 4rem;
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.services-box {
+    flex: 1 1 30rem;
+    background: #fff;
+    border: 1px solid #dbe2ef;
+    border-radius: 2rem;
+    padding: 3rem 2rem;
+    text-align: center;
+    transition: 0.4s ease;
+}
+
+.services-box:hover {
+    border-color: var(--main-color);
+    transform: scale(1.03);
+    box-shadow: 0 0 1rem rgba(37, 99, 235, 0.3);
+}
+
+.services-box i {
+    font-size: 5rem;
+    color: var(--main-color);
+    margin-bottom: 1.5rem;
+}
+
+.services-box h3 {
+    font-size: 2.2rem;
+    color: var(--dark-text-color);
+    margin-bottom: 1rem;
+}
+
+.services-box p {
+    font-size: 1.5rem;
+    color: var(--dark-text-color);
+    line-height: 1.6;
+    text-align: left;
+}
+
+/* === Career Section === */
+.career {
+    background: var(--second-bg-color);
+    color: var(--dark-text-color);
+    padding: 8rem 9%;
+}
+
+.career h2 {
+    font-size: 3.8rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.career h2 span {
+    color: var(--main-color);
+}
+
+.career p {
+    font-size: 1.6rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.career ul {
+    font-size: 1.6rem;
+    line-height: 2;
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding-left: 3rem;
+}
+
+.career li {
+    margin-bottom: 1rem;
+}
+
+/* === Summary Section === */
+.summary {
+    background: var(--second-bg-color);
+    padding: 8rem 9%;
+}
+
+.summary h2 {
+    text-align: center;
+    color: var(--dark-text-color);
+    margin-bottom: 4rem;
+}
+
+.summary h2 span {
+    color: var(--main-color);
+}
+
+/* === Portfolio === */
+.portfolio {
+    background: var(--bg-color);
+    padding: 8rem 9%;
+}
+
+.portfolio h2 {
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 4rem;
+}
+
+.portfolio-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.portfolio-box {
+    position: relative;
+    border-radius: 2rem;
+    overflow: hidden;
+    background: var(--bg-color);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    flex: 1 1 300px;
+    max-width: 350px;
+}
+
+.portfolio-box:hover {
+    transform: translateY(-5px);
+}
+
+.portfolio-box img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 2rem;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.portfolio-box:hover img {
+    transform: scale(1.08);
+}
+
+.portfolio-layer {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), var(--main-color));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(100%);
+    transition: 0.5s ease;
+}
+
+.portfolio-box:hover .portfolio-layer {
+    transform: translateY(0);
+}
+
+.portfolio-layer h4 {
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+.portfolio-layer p {
+    font-size: 1.5rem;
+    color: #f1f5f9;
+}
+
+/* === Contact Section === */
+.contact form {
+    max-width: 70rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact input,
+.contact textarea {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    border-radius: 0.8rem;
+    background: #fff;
+    color: var(--dark-text-color);
+    border: 1px solid #cbd5e1;
+    margin-bottom: 1rem;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+    border-color: var(--main-color);
+}
+
+/* === Footer === */
+.footer {
+    background: var(--second-bg-color);
+    color: var(--dark-text-color);
+    padding: 2rem 9%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer p {
+    font-size: 1.4rem;
+}
+
+.footer-iconTop a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.8rem;
+    background: var(--main-color);
+    border-radius: 0.8rem;
+    transition: 0.3s;
+}
+
+.footer-iconTop a:hover {
+    background: var(--highlight-color);
+    box-shadow: 0 0 1rem var(--highlight-color);
+}
+
+.footer-iconTop a i {
+    color: #fff;
+    font-size: 2rem;
+}
+
+/* === Hyperlinks === */
+a {
+  color: var(--highlight-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--main-color);
+}
+
+/* === Responsive === */
+@media (max-width: 991px) {
+    .navbar { display: none; }
+    #menu-icon { display: block; }
+    .navbar.active { display: block; background: var(--bg-color); padding: 1rem 3%; }
+}
+
+@media (max-width: 768px) {
+    html { font-size: 55%; }
+
+    .home {
+        flex-direction: column;
+        text-align: center;
+        padding: 10rem 5% 5rem;
     }
 
-    a:hover {
-      color: #1e90ff;
+    .home-content {
+        max-width: 90%;
+        margin-bottom: 2rem;
     }
+
+    .home-img img {
+        width: 80vw;
+        border-radius: 50%;
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 450px) {
+    html { font-size: 50%; }
+
+    .home-img img {
+        width: 90vw;
+    }
+}
   </style>
 </head>
 
@@ -46,7 +547,7 @@
   <!-- HOME / ABOUT -->
   <section class="home" id="home">
     <div class="home-content">
-      <h3>Hello, I’m</h3>
+      <h3>Hello, I'm</h3>
       <h1>Rishabh Raj Tandon</h1>
       <h3><span class="multiple-text"></span></h3>
       <p>
@@ -111,7 +612,7 @@
         reinforced the need for strategic innovation, while 
         <a href="https://www.linkedin.com/in/eric-knight-641b7a7/?originalSubdomain=au" target="_blank">the Deputy Vice Chancellor of Macquarie University</a> 
         highlighted the importance of structured problem solving. 
-        Both perspectives influenced my financial approach, ensuring that TerraCare’s outcomes remained practical, evidence based, and scalable.
+        Both perspectives influenced my financial approach, ensuring that TerraCare's outcomes remained practical, evidence based, and scalable.
       </p>
     </div>
   </section> 
@@ -211,61 +712,73 @@
     </div>
   </section>
 
-   <!-- CAREER -->
-  <section class="about" id="career">
-    <div class="about-content">
-      <h2 class="heading">Career & <span>Employability</span></h2>
-      <p>
-        The Capstone experience clarified my long-term ambition to work in finance and operations analytics within sustainable enterprises. 
-        MQBS3010 strengthened my ability to apply data interpretation, financial strategy, and teamwork across complex, real-world challenges.
-      </p>
+  <!-- CAREER -->
+  <section class="career" id="career">
+    <h2>Career & <span>Employability Development</span></h2>
+    <p>
+      Based on academic feedback and industry insights, I have developed a targeted plan for ongoing professional development:
+    </p>
+    
+    <p>
+      <strong>Key Skills Developed:</strong><br>
+      • Financial and data analysis<br>
+      • Adaptability and problem-solving<br>
+      • Collaboration and communication<br>
+      • Digital literacy and critical thinking
+    </p>
 
-      <br><br>
+    <p>
+      <strong>Evidence-Based Development Plan:</strong><br>
+      • Complete Advanced Excel Certification by December 2025 to enhance data interpretation and financial reporting<br>
+      • Begin preparation for CFA Level 1 with a focus on Environmental, Social, and Governance (ESG) analysis<br>
+      • Seek mentorship through Macquarie University's alumni network to gain exposure to sustainable finance practices<br>
+      • Build a portfolio of impact analysis projects focused on agricultural and climate related investments by mid 2026
+    </p>
 
-      <p>
-        <strong>Key Skills Developed:</strong><br>
-        • Financial and data analysis<br>
-        • Adaptability and problem-solving<br>
-        • Collaboration and communication<br>
-        • Digital literacy and critical thinking
-      </p>
+    <p>
+      These structured steps reflect my ability to identify skill gaps and apply evidence based strategies for professional growth. 
+      They also demonstrate the capacity for self regulation, showing how I translate feedback into measurable development outcomes.
+    </p>
 
-      <br><br>
-
-      <p>
-        I aim to pursue a career in sustainable finance, combining analytical expertise with social and environmental responsibility. 
-        My mission is to ensure that data-driven strategies contribute to both profitability and long-term sustainability across industries.
-      </p>
-    </div>
+    <p>
+      The Capstone reinforced that employability extends beyond technical expertise. It involves adaptability, communication, teamwork, and integrity. 
+      These qualities will guide me as I pursue a career that combines financial innovation with ethical impact.
+    </p>
   </section>
 
   <!-- FINAL REFLECTION -->
-  <section class="services" id="summary">
+  <section class="summary" id="summary">
     <h2 class="heading">Final <span>Reflection</span></h2>
     <div class="services-container">
       <div class="services-box">
         <p>
-          The MQBS3010 Capstone was a transformative experience merging academic learning with real-world impact. 
-          Through TerraCare, I discovered that sustainability and financial performance are complementary when guided by structure and collaboration. 
-          Guest insights from 
-          <a href="https://www.linkedin.com/in/eric-knight-641b7a7/?originalSubdomain=au" target="_blank">the Deputy Vice Chancellor of Macquarie University</a>, 
-          <a href="https://www.linkedin.com/in/fady-daher-ba5b48/?originalSubdomain=au" target="_blank">the Chief Executive Officer of SoCreative</a>, 
-          <a href="https://www.linkedin.com/in/adam-garth/" target="_blank">the Assurance Associate at EY</a>, and 
-          <a href="https://www.linkedin.com/in/fahmida-mridha/?originalSubdomain=au" target="_blank">the Restructuring and Recovery Intermediate Accountant at Vincents</a> 
-          shaped my approach to leadership and innovation.
+          The MQBS3010 Capstone experience reshaped my perspective on finance, collaboration, and sustainability. 
+          Through TerraCare, I learned that profitability and environmental stewardship can coexist when guided by disciplined planning and ethical leadership.
         </p>
         <p>
-          Working within a multidisciplinary team enhanced my adaptability, communication, and problem-solving abilities. 
-          I developed a deeper understanding of how finance can drive sustainable change through strategic foresight.
+          Feedback from my tutor and industry professionals helped me transform uncertainty into structured action. 
+          I now approach challenges as opportunities for growth, viewing feedback as a catalyst rather than criticism. 
+          The experience deepened my understanding of reflective practice and the importance of aligning finance with broader human and ecological systems.
         </p>
         <p>
-          Moving forward, I aim to apply these lessons in my career, aligning data-driven strategy with ethical, long-term growth — contributing meaningfully to the UN Sustainable Development Goals.
+          Looking ahead, I plan to continue developing through mentorship, certification, and professional projects that combine data analysis with sustainable outcomes. 
+          My goal is to become a finance professional who drives organisational success while supporting the transition toward a sustainable economy.
+        </p>
+        <p>
+          This unit taught me that continuous learning, reflection, and curiosity form the foundation of professional excellence. 
+          As I progress, I will apply these lessons to create both financial and social value in every role I undertake.
         </p>
       </div>
     </div>
+    
+    <div style="margin-top: 3rem; padding: 2rem; background: #fff; border-radius: 1rem;">
+      <h3 style="color: var(--dark-text-color); font-size: 2rem; margin-bottom: 1rem;">References (APA 7th)</h3>
+      <p style="color: var(--dark-text-color); font-size: 1.4rem; line-height: 1.8;">
+        Macquarie University. (2024). <em>Work Integrated Learning Framework 2024–2028</em>.<br><br>
+        United Nations. (2024). <em>Sustainable Development Goal 15: Life on Land</em>. Retrieved from https://sdgs.un.org/goals/goal15
+      </p>
+    </div>
   </section>
-  
-  
 
   <!-- CONTACT -->
   <section class="contact" id="contact">
@@ -297,6 +810,68 @@
   <!-- Scripts -->
   <script src="https://unpkg.com/scrollreveal"></script>
   <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-  <script src="js/script.js"></script>
+  <script>
+// === TOGGLE NAVBAR ICON ===
+let menuIcon = document.querySelector('#menu-icon');
+let navbar = document.querySelector('.navbar');
+menuIcon.onclick = () => {
+    menuIcon.classList.toggle('bx-x');
+    navbar.classList.toggle('active');
+};
+
+// === SCROLL SECTIONS ACTIVE LINK ===
+let sections = document.querySelectorAll('section');
+let navLinks = document.querySelectorAll('header nav a');
+window.onscroll = () => {
+    let top = window.scrollY;
+    sections.forEach(sec => {
+        let offset = sec.offsetTop - 150;
+        let height = sec.offsetHeight;
+        let id = sec.getAttribute('id');
+        if (top >= offset && top < offset + height) {
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+            document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
+        }
+    });
+
+    // === STICKY HEADER ===
+    let header = document.querySelector('header');
+    header.classList.toggle('sticky', top > 100);
+
+    // === REMOVE NAVBAR WHEN LINK CLICKED (MOBILE) ===
+    menuIcon.classList.remove('bx-x');
+    navbar.classList.remove('active');
+};
+
+// === SCROLL REVEAL ANIMATIONS ===
+ScrollReveal({
+    distance: '80px',
+    duration: 1800,
+    delay: 200,
+    reset: false
+});
+
+ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
+ScrollReveal().reveal('.home-img, .services-container, .portfolio-box, .contact form', { origin: 'bottom' });
+ScrollReveal().reveal('.home-content h1, .about-img', { origin: 'left' });
+ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
+
+// === TYPED TEXT EFFECT ===
+const typed = new Typed('.multiple-text', {
+    strings: [
+        'Finance Student',
+        'Analytics Enthusiast',
+        'Sustainability Advocate',
+        'Aspiring Analyst'
+    ],
+    typeSpeed: 100,
+    backSpeed: 90,
+    backDelay: 1200,
+    loop: true,
+    smartBackspace: true
+});
+  </script>
 </body>
 </html>
