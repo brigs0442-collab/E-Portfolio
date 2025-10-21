@@ -32,16 +32,33 @@ body {
     color: var(--text-color);
 }
 
-/* === FIXED SPACING BETWEEN SECTIONS === */
+/* === One Full Page per Section === */
 section {
-    min-height: auto;
-    padding: 6rem 9% 4rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8rem 9%;
+    box-sizing: border-box;
 }
 
-/* Keep home centered and full-screen */
+/* Allow internal scrolling if content exceeds one page */
+.capstone, .reflections, .projects, .career, .summary {
+    height: 100vh;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    padding: 8rem 9%;
+}
+
+/* Home section layout */
 .home {
-    min-height: 100vh;
-    padding: 10rem 9% 4rem;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10rem 9%;
 }
 
 /* === Alternating Section Design === */
@@ -100,12 +117,6 @@ section {
 }
 
 /* === Home Section === */
-.home {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .home-content {
     max-width: 600px;
 }
