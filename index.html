@@ -312,7 +312,7 @@ span {
     line-height: 1.8;
     margin-bottom: 2rem;
     max-width: 1000px;
-  margin-left: auto;
+    margin-left: auto;
     margin-right: auto;
 }
 
@@ -489,38 +489,332 @@ a:hover {
 }
 
 /* === Responsive === */
-@media (max-width: 991px) {
-    .navbar { display: none; }
-    #menu-icon { display: block; }
-    .navbar.active { display: block; background: var(--bg-color); padding: 1rem 3%; }
+
+/* Large Tablets and Small Desktops */
+@media (max-width: 1200px) {
+    html { font-size: 58%; }
+    
+    section {
+        padding: 6rem 7%;
+    }
+    
+    .home {
+        padding: 8rem 7%;
+    }
 }
 
+/* Tablets */
+@media (max-width: 991px) {
+    html { font-size: 56%; }
+    
+    /* Mobile Navigation */
+    #menu-icon { 
+        display: block;
+        cursor: pointer;
+    }
+    
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 3%;
+        background: var(--bg-color);
+        border-top: 0.1rem solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+        display: none;
+    }
+    
+    .navbar.active {
+        display: block;
+    }
+    
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 2rem 0;
+        color: var(--text-color);
+    }
+    
+    /* About/Capstone Section */
+    .about {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .about-img img {
+        width: 70vw;
+        max-width: 400px;
+        margin-bottom: 3rem;
+    }
+    
+    .about-content {
+        max-width: 100%;
+    }
+    
+    /* Portfolio */
+    .portfolio-box {
+        max-width: 100%;
+    }
+}
+
+/* Mobile Landscape and Small Tablets */
 @media (max-width: 768px) {
     html { font-size: 55%; }
-
+    
+    .header {
+        padding: 2rem 5%;
+    }
+    
+    section {
+        padding: 6rem 5%;
+    }
+    
+    /* Home Section */
     .home {
         flex-direction: column;
         text-align: center;
         padding: 10rem 5% 5rem;
+        gap: 3rem;
     }
 
     .home-content {
-        max-width: 90%;
+        max-width: 100%;
         margin-bottom: 2rem;
+    }
+    
+    .home-content h1 {
+        font-size: 4rem;
+    }
+    
+    .home-content h3 {
+        font-size: 2.8rem;
+    }
+
+    .home-img {
+        order: 2;
     }
 
     .home-img img {
-        width: 80vw;
+        width: 60vw;
+        max-width: 300px;
         border-radius: 50%;
         margin-top: 2rem;
     }
+    
+    /* Services/Reflections Boxes */
+    .services-container {
+        flex-direction: column;
+    }
+    
+    .services-box {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    /* Portfolio */
+    .portfolio-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .portfolio-box {
+        max-width: 500px;
+        width: 100%;
+    }
+    
+    /* Career Section */
+    .career {
+        padding: 6rem 5%;
+    }
+    
+    .career h2 {
+        font-size: 3.2rem;
+    }
+    
+    .career p,
+    .career ul {
+        font-size: 1.5rem;
+    }
+    
+    /* Contact Form */
+    .contact input,
+    .contact textarea {
+        font-size: 1.5rem;
+    }
+    
+    /* Footer */
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
 }
 
+/* Mobile Portrait */
 @media (max-width: 450px) {
     html { font-size: 50%; }
+    
+    .header {
+        padding: 2rem 4%;
+    }
+    
+    section {
+        padding: 5rem 4%;
+    }
+    
+    /* Home Section */
+    .home {
+        padding: 8rem 4% 4rem;
+    }
+    
+    .home-content h1 {
+        font-size: 3.5rem;
+    }
+    
+    .home-content h3 {
+        font-size: 2.4rem;
+    }
+    
+    .home-content p {
+        font-size: 1.4rem;
+    }
 
     .home-img img {
-        width: 90vw;
+        width: 70vw;
+        max-width: 250px;
+    }
+    
+    /* Social Media Icons */
+    .social-media a {
+        width: 3.5rem;
+        height: 3.5rem;
+        font-size: 1.8rem;
+        margin: 2rem 1rem 2rem 0;
+    }
+    
+    /* Buttons */
+    .btn {
+        padding: 0.8rem 2rem;
+        font-size: 1.4rem;
+    }
+    
+    /* About Content */
+    .about-img img {
+        width: 85vw;
+    }
+    
+    .about-content h2,
+    .heading {
+        font-size: 3rem;
+    }
+    
+    .about-content h3 {
+        font-size: 2rem;
+    }
+    
+    .about-content p {
+        font-size: 1.4rem;
+    }
+    
+    /* Services Boxes */
+    .services h2 {
+        font-size: 3rem;
+    }
+    
+    .services-box {
+        padding: 2rem 1.5rem;
+    }
+    
+    .services-box i {
+        font-size: 4rem;
+    }
+    
+    .services-box h3 {
+        font-size: 1.8rem;
+    }
+    
+    .services-box p {
+        font-size: 1.3rem;
+    }
+    
+    /* Portfolio */
+    .portfolio h2 {
+        font-size: 3rem;
+    }
+    
+    .portfolio-box {
+        max-width: 100%;
+    }
+    
+    .portfolio-layer h4 {
+        font-size: 2rem;
+    }
+    
+    .portfolio-layer p {
+        font-size: 1.3rem;
+        padding: 0 1rem;
+    }
+    
+    /* Career */
+    .career h2 {
+        font-size: 2.8rem;
+    }
+    
+    .career p,
+    .career ul {
+        font-size: 1.4rem;
+    }
+    
+    .career ul {
+        padding-left: 2rem;
+    }
+    
+    /* Summary */
+    .summary h2 {
+        font-size: 3rem;
+    }
+    
+    /* Contact */
+    .contact h2 {
+        font-size: 3rem;
+    }
+    
+    .contact form {
+        max-width: 100%;
+    }
+    
+    .contact input,
+    .contact textarea {
+        padding: 1.2rem;
+        font-size: 1.4rem;
+    }
+    
+    /* Footer */
+    .footer p {
+        font-size: 1.2rem;
+    }
+}
+
+/* Extra Small Devices */
+@media (max-width: 350px) {
+    html { font-size: 45%; }
+    
+    .home-content h1 {
+        font-size: 3rem;
+    }
+    
+    .home-img img {
+        width: 80vw;
+    }
+    
+    .logo {
+        font-size: 2rem;
+    }
+    
+    #menu-icon {
+        font-size: 3rem;
     }
 }
   </style>
