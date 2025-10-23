@@ -65,12 +65,12 @@ section {
 
 /* Home section layout */
 .home {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    padding: 10rem 9%;
+    padding: 10rem 9% 5rem;
 }
 
 /* === Alternating Section Design === */
@@ -131,6 +131,7 @@ section {
 /* === Home Section === */
 .home-content {
     max-width: 600px;
+    flex-shrink: 0;
 }
 
 .home-content h3 {
@@ -150,6 +151,10 @@ section {
     font-size: 1.6rem;
     color: var(--text-color);
     margin-bottom: 2rem;
+}
+
+.home-img {
+    flex-shrink: 0;
 }
 
 span {
@@ -264,7 +269,7 @@ span {
     padding: 3rem 2rem;
     text-align: center;
     transition: 0.4s ease;
-    height: 500px;
+    height: 450px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -506,7 +511,12 @@ a:hover {
     }
     
     .home {
-        padding: 8rem 7%;
+        padding: 8rem 7% 5rem;
+        min-height: 100vh;
+    }
+    
+    .home-content {
+        max-width: 55%;
     }
 }
 
@@ -583,6 +593,7 @@ a:hover {
         text-align: center;
         padding: 10rem 5% 5rem;
         gap: 3rem;
+        min-height: auto;
     }
 
     .home-content {
@@ -983,7 +994,7 @@ a:hover {
             Built a financial model comparing leveraged property investment versus unlevered equities for an SMSF strategy project. 
             The model evaluates returns, risk exposure, and long-term sustainability under varying market conditions.
           </p>
-          <a href="https://drive.google.com/drive/folders/12ckB8ohT7gktkEX4_c5YPyJLPGtXVbue"><i class='bx bx-link-external'></i></a>
+          <a href="https://github.com/DJGam454/Projects"><i class='bx bx-link-external'></i></a>
         </div>
       </div>
 
@@ -995,7 +1006,7 @@ a:hover {
             Conducted an Excel-based analysis for portfolio optimization, using historical market data and diversification principles 
             to assess efficient asset allocation and Sharpe ratio improvements across investment strategies.
           </p>
-          <a href="https://drive.google.com/drive/folders/12ckB8ohT7gktkEX4_c5YPyJLPGtXVbue"><i class='bx bx-link-external'></i></a>
+          <a href="https://github.com/DJGam454/Projects"><i class='bx bx-link-external'></i></a>
         </div>
       </div>
 
@@ -1007,7 +1018,7 @@ a:hover {
             Designed and developed a responsive website to showcase academic projects, financial models, and professional reflections 
             with a focus on accessibility and clean design.
           </p>
-          <a href="https://drive.google.com/drive/folders/12ckB8ohT7gktkEX4_c5YPyJLPGtXVbue"><i class='bx bx-link-external'></i></a>
+          <a href="https://github.com/DJGam454/Projects"><i class='bx bx-link-external'></i></a>
         </div>
       </div>
     </div>
